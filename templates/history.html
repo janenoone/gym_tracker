@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Workout History</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="/">Welcome</a>
+                <a href="/log">Log Workout</a>
+                <a href="/history">History</a>
+                <a href="/performance">Performance</a>
+                <a href="/personal-records">Personal Records</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="section">
+        <h1>Workout History</h1>
+        <div class="history-container">
+            {% for workout in history %}
+            <div class="workout-entry">
+                <h2>Workout ID: {{ workout.workout_id }}</h2>
+                <p><strong>Date:</strong> {{ workout.date }}</p>
+                <ul>
+                    {% for movement in workout.movements %}
+                    <li>{{ movement }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

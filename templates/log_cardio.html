@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Log Cardio Workout</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="/">Welcome</a>
+                <a href="/log">Log Workout</a>
+                <a href="/history">History</a>
+                <a href="/performance">Performance</a>
+                <a href="/personal-records">Personal Records</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Log Cardio Workout -->
+    <div class="section section-2">
+        <h1>Log Your Cardio Workout</h1>
+        <form action="/log/cardio" method="POST">
+            <table class="log-table">
+                <tr>
+                    <th>Movement</th>
+                    <td><input type="text" name="movement" placeholder="E.g., Running" required></td>
+                </tr>
+                <tr>
+                    <th>Duration (mins)</th>
+                    <td><input type="number" name="duration" placeholder="E.g., 30" required></td>
+                </tr>
+                <tr>
+                    <th>Distance (km)</th>
+                    <td><input type="number" name="distance" placeholder="E.g., 5"></td>
+                </tr>
+                <tr>
+                    <th>Notes</th>
+                    <td><input type="text" name="notes" placeholder="Optional"></td>
+                </tr>
+            </table>
+            <button type="submit" class="button-yellow">Submit</button>
+        </form>
+        
+    </div>
+</body>
+</html>

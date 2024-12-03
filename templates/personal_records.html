@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Personal Records</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="/">Welcome</a>
+                <a href="/log">Log Workout</a>
+                <a href="/history">History</a>
+                <a href="/performance">Performance</a>
+                <a href="/personal-records">Personal Records</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="section">
+        <h1>Personal Records</h1>
+        <table class="log-table">
+            <thead>
+                <tr>
+                    <th>Movement</th>
+                    <th>Max Weight (kg)</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in records %}
+                <tr>
+                    <td>{{ record[0] }}</td>
+                    <td>{{ record[1] }}</td>
+                    <td>{{ record[2] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

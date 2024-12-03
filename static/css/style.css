@@ -1,0 +1,515 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Section Styling */
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Ensure black background even without images */
+}
+
+/* Header Styling */
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    color: #fff; /* White text */
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #111; /* Dark background */
+    padding: 10px 0;
+    text-align: center;
+    position: sticky; /* Sticks to the top when scrolling */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.navbar .nav-link {
+    color: #fff; /* White text */
+    text-decoration: none; /* No underline */
+    margin: 0 15px;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #FFFF00; /* Bright yellow for hover and active */
+    font-weight: bold;
+}
+
+/* General Button Styling */
+.button,
+.button-yellow {
+    display: inline-block;
+    width: 220px; /* Consistent width for all buttons */
+    height: 50px; /* Consistent height for all buttons */
+    line-height: 50px; /* Vertically align text */
+    text-align: center; /* Center the text horizontally */
+    padding: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease;
+    margin: 10px 0; /* Vertical spacing */
+}
+
+/* Button Colors */
+.button {
+    background-color: #555; /* Grey background */
+    color: white;
+}
+
+.button:hover {
+    background-color: #666; /* Slightly lighter grey */
+}
+
+.button-yellow {
+    background-color: #FFFF00; /* Bright yellow background */
+    color: black;
+}
+
+.button-yellow:hover {
+    background-color: #FFE600; /* Slightly darker yellow */
+}
+
+/* Table Styling */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #222;
+    color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #555;
+    text-align: center;
+}
+
+table th {
+    background-color: #333;
+    color: #FFFF00; /* Yellow headings */
+}
+
+table td {
+    background-color: #222;
+}
+
+table tr:nth-child(even) td {
+    background-color: #444; /* Alternate row color */
+}
+
+/* Log Workout Table Styling */
+.log-table {
+    margin: 0 auto;
+    width: 50%; /* Consistent width */
+    border-collapse: collapse;
+    background-color: #222;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.log-table th, .log-table td {
+    padding: 12px;
+    border: 1px solid #555;
+    text-align: left; /* Align text consistently */
+    vertical-align: middle;
+}
+
+.log-table th {
+    background-color: #333;
+    font-weight: bold;
+    color: #FFFF00; /* Yellow for headings */
+    width: 30%; /* Fixed width for headers */
+}
+
+.log-table td {
+    width: 70%; /* Remaining space for input fields */
+}
+
+.log-table input[type="text"],
+.log-table input[type="number"] {
+    width: 98%; /* Full width */
+    padding: 8px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: white;
+}
+
+.log-table input:focus {
+    outline: 2px solid #FFFF00; /* Highlight on focus */
+}
+
+.log-table input::placeholder {
+    color: #aaa;
+}
+
+/* Log Your Workout Page Background */
+.section-2 {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    background-image: linear-gradient(
+            rgba(0, 0, 0, 0.6), 
+            rgba(0, 0, 0, 0.6)
+        ),
+        url('/static/images/log-bg.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+/* Dropdown Menu Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.dropbtn {
+    background-color: #555;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropbtn:hover {
+    background-color: #666;
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #111;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1em;
+    border-bottom: 1px solid #555;
+}
+
+.dropdown-content a:hover {
+    background-color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show on hover */
+}
+
+/* Section Buttons Styling */
+.section-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.section-buttons .button {
+    background-color: #555;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.section-buttons .button:hover {
+    background-color: #666;
+    opacity: 0.9; /* Subtle hover effect */
+}
+
+/* Input Field Focus */
+input:focus {
+    outline: 2px solid #FFFF00;
+}
+
+/* Unified Table Styling (History and Log Tables) */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #222;
+    color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #555;
+    text-align: center;
+    font-family: inherit; /* Inherit font style */
+}
+
+table th {
+    background-color: #333;
+    color: #FFFF00; /* Yellow for headings */
+    font-weight: bold;
+}
+
+table td {
+    background-color: #222;
+}
+
+table tr:nth-child(even) td {
+    background-color: #444; /* Alternate row color */
+}
+
+/* Specific Styling for Log Tables */
+.log-table {
+    margin: 0 auto;
+    width: 90%; /* Match the history table width */
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.log-table th {
+    background-color: #333;
+    color: #FFFF00; /* Yellow for headings */
+    font-size: 1.2em;
+}
+
+.log-table td {
+    background-color: #222;
+    color: #fff;
+}
+
+.log-table input[type="text"],
+.log-table input[type="number"] {
+    width: 90%; /* Reduce width slightly to fit table padding */
+    padding: 8px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: white;
+    text-align: center; /* Center input text */
+}
+
+.log-table input:focus {
+    outline: 2px solid #FFFF00; /* Highlight on focus */
+}
+
+/* Hero Section Styling */
+.hero-section {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    background-image: linear-gradient(
+            rgba(0, 0, 0, 0.6), 
+            rgba(0, 0, 0, 0.6)
+        ),
+        url('/static/images/hero-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white; /* White text */
+}
+
+.hero-overlay h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #FFFF00; /* Yellow text for emphasis */
+}
+
+.hero-overlay p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.hero-overlay .button-yellow {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 20px;
+    text-decoration: none;
+    color: black;
+    background-color: #FFFF00;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-overlay .button-yellow:hover {
+    background-color: #FFE600;
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* General Table Styling */
+.styled-table {
+    margin: 0 auto;
+    width: 90%; /* Set width to 90% of the page */
+    border-collapse: collapse;
+    background-color: #333; /* Dark background for the table */
+    color: #fff; /* White text */
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: left; /* Align text to the left */
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px; /* Padding inside cells */
+    border: 1px solid #555; /* Add borders to cells */
+    text-align: center; /* Center-align text */
+}
+
+.styled-table th {
+    background-color: #444; /* Darker background for headers */
+    font-weight: bold;
+    color: #FFFF00; /* Yellow text for headers */
+}
+
+.styled-table tbody tr {
+    background-color: #222; /* Slightly lighter background for rows */
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #555; /* Alternate row color */
+}
+
+.styled-table tbody tr:hover {
+    background-color: #666; /* Highlight row on hover */
+}
+
+/* Input Fields Inside Table */
+.styled-table input[type="text"],
+.styled-table input[type="number"] {
+    width: 90%; /* Slightly smaller than cell width */
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #888; /* Subtle border */
+    background-color: #444;
+    color: #fff;
+}
+
+.styled-table input:focus {
+    outline: 2px solid #FFFF00; /* Highlight inputs on focus */
+}
+
+/* Fix for navigation overlap */
+.section-2 {
+    padding-top: 60px; /* Add space below the navigation bar */
+}
+
+/* Styled Table */
+.styled-table {
+    margin: 0 auto;
+    width: 90%; /* Full width */
+    border-collapse: collapse;
+    background-color: #333;
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center; /* Center align text */
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px;
+    border: 1px solid #555;
+}
+
+.styled-table th {
+    background-color: #444;
+    font-weight: bold;
+    color: #FFFF00; /* Yellow for headings */
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #444; /* Alternate row colors */
+}
+
+.styled-table tbody tr:hover {
+    background-color: #555; /* Highlight row on hover */
+}
+
+.styled-table input[type="text"],
+.styled-table input[type="number"] {
+    width: 90%; /* Fit inputs inside cells */
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #888;
+    background-color: #444;
+    color: white;
+}
+
+.styled-table input:focus {
+    outline: 2px solid #FFFF00; /* Highlight inputs on focus */
+}
+
+/* Default padding for most pages */
+.section {
+    padding-top: 50px; /* Default padding */
+}
+
+/* Increased padding for Upper Body and Lower Body pages */
+#upper-body .section,
+#lower-body .section {
+    padding-top: 450px; /* Increased padding */
+}
+
+
+.styled-table {
+    margin-top: 20px; /* Add margin above the table */
+    width: 90%; /* Ensure the table fits within the content area */
+    border-collapse: collapse;
+    background-color: #333;
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#history .section {
+    background-image: url('/static/images/history-bg.jpg'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white; /* Ensure text remains visible on the background */
+}
+

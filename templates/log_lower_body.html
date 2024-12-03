@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Log Lower Body Workout</title>
+</head>
+<body>
+<body id="lower-body">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="/">Welcome</a>
+                <a href="/log">Log Workout</a>
+                <a href="/history">History</a>
+                <a href="/performance">Performance</a>
+                <a href="/personal-records">Personal Records</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Log Lower Body Workout -->
+    <div class="section section-2">
+        <h1>Log Your Lower Body Workout</h1>
+        <form action="/log/lower-body" method="POST">
+            <table class="log-table styled-table">
+                <thead>
+                    <tr>
+                        <th>Movement</th>
+                        <th>Set</th>
+                        <th>Reps</th>
+                        <th>Weight (kg)</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Input rows for 5 sets per movement -->
+                    {% for movement in range(5) %}
+                    {% for set in range(5) %}
+                    <tr>
+                        {% if set == 0 %}
+                        <td rowspan="5">
+                            <input type="text" name="movement{{ movement }}" placeholder="E.g., Squat">
+                        </td>
+                        {% endif %}
+                        <td>Set {{ set + 1 }}</td>
+                        <td><input type="number" name="reps{{ movement }}_{{ set }}" placeholder="E.g., 12"></td>
+                        <td><input type="number" name="weight{{ movement }}_{{ set }}" placeholder="E.g., 100"></td>
+                        {% if set == 0 %}
+                        <td rowspan="5">
+                            <input type="text" name="notes{{ movement }}" placeholder="Optional">
+                        </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button type="submit" class="button-yellow">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
