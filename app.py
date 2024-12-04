@@ -120,8 +120,8 @@ def log_cardio():
         # Retrieve form data
         movement = request.form.get('movement')
         duration = request.form.get('duration')
-        distance = request.form.get('distance')
-        notes = request.form.get('notes')
+        distance = request.form.get('distance', None)  # Optional field
+        notes = request.form.get('notes', None)  # Optional field
 
         # Validate required fields
         if not movement or not duration:
@@ -130,9 +130,11 @@ def log_cardio():
         try:
             conn = sqlite3.connect('gym.db', check_same_thread=False)
             c = conn.cursor()
+            # Insert into database with default values for sets, reps, and weight
             c.execute(
-                "INSERT INTO workouts (movement, duration, distance, notes, date) VALUES (?, ?, ?, ?, datetime('now'))",
-                (movement, duration, distance, notes)
+                """INSERT INTO workouts (movement, sets, reps, weight, duration, distance, notes, date)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, datetime('now'))""",
+                (movement, 0, 0, 0, duration, distance, notes)  # Default values for sets, reps, weight
             )
             conn.commit()
         finally:
