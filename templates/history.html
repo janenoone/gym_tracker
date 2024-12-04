@@ -20,21 +20,32 @@
         </div>
     </nav>
 
-    <div class="section">
-        <h1>Workout History</h1>
-        <div class="history-container">
-            {% for workout in history %}
-            <div class="workout-entry">
-                <h2>Workout ID: {{ workout.workout_id }}</h2>
-                <p><strong>Date:</strong> {{ workout.date }}</p>
-                <ul>
-                    {% for movement in workout.movements %}
-                    <li>{{ movement }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endfor %}
-        </div>
+    <div class="section-2">
+        <h1 style="text-align: center; color: #fff;">Workout History</h1>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Workout ID</th>
+                    <th>Date</th>
+                    <th>Movements</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for workout in history %}
+                <tr>
+                    <td>{{ workout.workout_id }}</td>
+                    <td>{{ workout.date }}</td>
+                    <td>
+                        <ul style="padding-left: 0; list-style: none;">
+                            {% for movement in workout.movements %}
+                            <li>{{ movement }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
